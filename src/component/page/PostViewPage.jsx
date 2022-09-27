@@ -1,11 +1,10 @@
-import React, {useState} from "react";
-import { createRoutesFromChildren, useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import CommentList from "../list/CommentList";
 import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
 import data from "../../data.json";
-
 
 const Wrapper = styled.div`
     padding: 16px;
@@ -19,7 +18,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
     width: 100%;
     max-width: 720px;
-
     & > * {
         :not(:last-child) {
             margin-bottom: 16px;
@@ -30,10 +28,10 @@ const Container = styled.div`
 const PostContainer = styled.div`
     padding: 8px 16px;
     border: 1px solid grey;
-    border-radius: 8px
+    border-radius: 8px;
 `;
 
-const TiteText = styled.p`
+const TitleText = styled.p`
     font-size: 28px;
     font-weight: 500;
 `;
@@ -59,17 +57,17 @@ function PostViewPage(props) {
 
     const [comment, setComment] = useState("");
 
-    return(
+    return (
         <Wrapper>
             <Container>
-                <Button
+                <button
                     title="뒤로 가기"
                     onClick={() => {
                         navigate("/");
                     }}
                 />
                 <PostContainer>
-                    <titleText>{post.title}</titleText>
+                    <TitleText>{post.title}</TitleText>
                     <ContentText>{post.content}</ContentText>
                 </PostContainer>
 
@@ -83,7 +81,7 @@ function PostViewPage(props) {
                         setComment(event.target.value);
                     }}
                 />
-                <Button 
+                <button
                     title="댓글 작성하기"
                     onClick={() => {
                         navigate("/");

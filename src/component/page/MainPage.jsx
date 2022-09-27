@@ -33,7 +33,7 @@ function MainPage(props) {
     return(
         <Wrapper>
             <Container>
-                <Button
+                <button
                     title="글 작성하기"
                     onClick={() => {
                         navigate("/post-write");
